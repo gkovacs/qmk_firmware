@@ -59,7 +59,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_RALT,        KC_UP,          KC_DOWN,        KC_LEFT,        KC_RIGHT,                                                                                                       KC_UP,          KC_DOWN,        KC_LEFT,        KC_RIGHT,       KC_RCTRL,
                                                                                                     KC_PGUP,        KC_PGDOWN,      KC_MINUS,       TO(1),
                                                                                                                     KC_LALT,        LALT(KC_SPACE),
-                                                                                    MO(3),          KC_LCTRL,       KC_LGUI,        KC_F23, KC_BSPACE,      KC_SPACE
+                                                                                    MO(3),          KC_LCTRL,       KC_LGUI,        KC_F24, KC_BSPACE,      KC_SPACE
   ),
   [1] = LAYOUT_ergodox_pretty(
     KC_ESCAPE,      KC_1,           KC_2,           KC_3,           KC_4,           KC_5,           MO(4),                                          TG(2),          KC_6,           KC_7,           KC_8,           KC_9,           KC_0,           KC_EQUAL,
@@ -122,16 +122,16 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     //     rgblight_mode(1);
     //   }
     //   return false;
-    case KC_F23:
-        if (record->event.pressed) {
-          layer_on(1);
-          tap_code(KC_F18);
-        }
-        return false;
     case KC_F24:
         if (record->event.pressed) {
-          layer_off(1);
-          tap_code(KC_F18);
+          if (IS_LAYER_ON(1)) {
+          	layer_off(1);
+          } else {
+          	layer_on(1);
+          }
+          register_code(KC_LCTRL);
+          tap_code(KC_SPACE);
+          unregister_code(KC_LCTRL);
         }
         return false;
   }
