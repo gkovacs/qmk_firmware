@@ -59,7 +59,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_RALT,        KC_UP,          KC_DOWN,        KC_LEFT,        KC_RIGHT,                                                                                                       KC_UP,          KC_DOWN,        KC_LEFT,        KC_RIGHT,       KC_RCTRL,
                                                                                                     KC_PGUP,        KC_PGDOWN,      TO(1),          KC_EQUAL,
                                                                                                                     KC_LALT,        KC_RALT,
-                                                                                    MO(3),          KC_LCTRL,       KC_RGUI,        RALT(KC_SPACE), KC_BSPACE,      KC_SPACE
+                                                                                    MO(3),          KC_LCTRL,       KC_RGUI,        LALT(KC_SPACE), KC_BSPACE,      KC_SPACE
   ),
   [1] = LAYOUT_ergodox_pretty(
     KC_ESCAPE,      KC_1,           KC_2,           KC_3,           KC_4,           KC_5,           MO(4),                                          TG(2),          KC_6,           KC_7,           KC_8,           KC_9,           KC_0,           KC_MINUS,
@@ -69,7 +69,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     LM(5,MOD_RALT), KC_UP,          KC_UP,          KC_LEFT,        KC_RIGHT,                                                                                                       KC_UP,          KC_DOWN,        KC_LEFT,        KC_RIGHT,       LM(5,MOD_RCTL),
                                                                                                     KC_PGUP,        KC_PGDOWN,      TO(0),          KC_EQUAL,
                                                                                                                     LM(5, MOD_LALT), LM(5, MOD_RALT),
-                                                                                    MO(3),          LM(5,MOD_LCTL), LM(5, MOD_RGUI), RALT(KC_SPACE), KC_BSPACE,     KC_SPACE
+                                                                                    MO(3),          LM(5,MOD_LCTL), LM(5, MOD_RGUI), LALT(KC_SPACE), KC_BSPACE,     KC_SPACE
   ),
   [2] = LAYOUT_ergodox_pretty(
     KC_ESCAPE,      KC_1,           KC_2,           KC_3,           KC_4,           KC_5,           KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_6,           KC_7,           KC_8,           KC_9,           KC_0,           KC_MINUS,
